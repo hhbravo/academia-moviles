@@ -5,4 +5,6 @@ import com.hans.exercise.session01.model.ProductEntity
 interface OnProductListener {
 
     fun selectedItemProduct(productEntity: ProductEntity)
+
+    fun renderFirst(productEntity: ProductEntity?)
 }

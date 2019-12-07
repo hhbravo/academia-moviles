@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/ivProduct"
-        android:layout_width="116dp"
+        android:layout_width="120dp"
         android:layout_height="121dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -28,12 +28,16 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="131dp"
+        android:layout_marginLeft="131dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/ivProduct"
+        app:layout_constraintStart_toStartOf="@+id/ivProduct"
         app:layout_constraintTop_toTopOf="@+id/ivProduct"
-        app:layout_constraintVertical_bias="0.192"
+        app:layout_constraintVertical_bias="0.111"
         tools:text="Producto 1" />
 
     <TextView
@@ -45,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
         app:layout_constraintVertical_bias="0.807"
         tools:text="In Stock" />
 

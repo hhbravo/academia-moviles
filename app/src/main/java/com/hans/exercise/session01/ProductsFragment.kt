@@ -11,10 +11,7 @@ import com.hans.exercise.session01.adapter.ProductAdapter
 import com.hans.exercise.session01.model.ProductEntity
 import kotlinx.android.synthetic.main.fragment_products.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+
 
 /**
  * A simple [Fragment] subclass.
@@ -46,6 +43,15 @@ class ProductsFragment : Fragment() {
                 it.selectedItemProduct(products[i])
             }
         }
+
+        listener?.renderFirst(first())
+    }
+
+    private fun first(): ProductEntity? {
+        products?.let {
+            return it[0]
+        }
+        return null
     }
 
     override fun onAttach(context: Context?) {
