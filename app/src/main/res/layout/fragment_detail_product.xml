@@ -6,52 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".DetailProductFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/iviProduct"
-            android:layout_width="match_parent"
-            android:layout_height="363dp"
-            tools:src="@tools:sample/avatars" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tviName"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Producto 1"
-                android:padding="10dp"
-                android:text="TextView" />
+            <ImageView
+                android:id="@+id/iviProduct"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                tools:src="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tviPrice"
-                android:textSize="20sp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:gravity="right"
-                tools:text="S/ 20.200"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tviName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="TextView"
+                    android:textSize="20sp"
+                    tools:text="Producto 1" />
+
+                <TextView
+                    android:id="@+id/tviPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:padding="10dp"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="S/ 20.200" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tviDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:textColor="@color/red"/>
-
+                android:textSize="20sp"
+                tools:text="descripcion del producto" />
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/tviDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:padding="10dp"
-            tools:text="descripcion del producto" />
-
-    </LinearLayout>
 </FrameLayout>
