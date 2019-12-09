@@ -2,35 +2,46 @@ package com.hans.exercise.session01
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.FragmentManager
 import com.hans.exercise.session01.model.ProductEntity
 
-class MainActivity : AppCompatActivity(), OnProductListener {
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 
-    private lateinit var productsFragment: ProductsFragment
+//class MainActivity : AppCompatActivity(), OnProductListener {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var detailProductFragment: DetailProductFragment
-    private lateinit var fragmentManager: FragmentManager
+    //private lateinit var productsFragment: ProductsFragment
 
-    override fun selectedItemProduct(productEntity: ProductEntity) {
-        detailProductFragment.renderProduct(productEntity)
-    }
+    //private lateinit var detailProductFragment: DetailProductFragment
+    //private lateinit var fragmentManager: FragmentManager
+
+    private lateinit var viewModel: ProductViewModel
 
 
-    override fun renderFirst(productEntity: ProductEntity?) {
-        productEntity?.let {
-            selectedItemProduct(it)
-        }
-    }
+//    override fun selectedItemProduct(productEntity: ProductEntity) {
+//        detailProductFragment.renderProduct(productEntity)
+//    }
+
+
+//    override fun renderFirst(productEntity: ProductEntity?) {
+//        productEntity?.let {
+//            selectedItemProduct(it)
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragmentManager = supportFragmentManager
-        productsFragment = fragmentManager.findFragmentById(R.id.fragProducts) as ProductsFragment
-        detailProductFragment =
-            fragmentManager.findFragmentById(R.id.fragmentDetail) as DetailProductFragment
+        viewModel = ViewModelProviders.of(this).get(ProductViewModel::class.java)
+
+        //observers
+
+        viewModel.productSelected.observe(this, Observer<ProductEntity> {
+            Log.v("CONSOLE", "activity $it")
+        })
 
     }
 }

@@ -15,7 +15,7 @@
         tools:layout="@layout/fragment_products"
         android:name="com.hans.exercise.session01.ProductsFragment"/>
 
-    <fragment
+   <fragment
         android:id="@+id/fragmentDetail"
         android:layout_weight="1"
         android:layout_height="match_parent"
